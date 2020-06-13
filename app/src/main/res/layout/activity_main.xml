@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="28dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="94dp" />
+
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:fontFamily="monospace"
+        android:gravity="center_horizontal"
+        android:text="Select an image from gallery or camera"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/image"
+        app:layout_constraintTop_toTopOf="@id/button_gallery" />
+
+    <!-- <Button
+        android:id="@+id/button"
+        android:layout_width="101dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="272dp"
+        android:text="Load Image"
+        app:layout_constraintBottom_toBottomOf="@+id/result_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/detect" />
+       -->
+
+
+    <LinearLayout
+        android:id="@+id/button_gallery"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/customborder"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/detect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/result_text"
+        app:layout_constraintVertical_bias="0.5"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@android:drawable/ic_menu_gallery" />
+
+        <TextView
+            android:text="Gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="9sp"
+            android:layout_gravity="center_horizontal"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detect"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/searchborder"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/button_gallery"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_camera"
+        app:layout_constraintTop_toBottomOf="@id/result_text"
+        app:layout_constraintVertical_bias="0.5">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@android:drawable/ic_menu_search" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/button_camera"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/customborder"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/detect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/result_text"
+        app:layout_constraintVertical_bias="0.5">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@android:drawable/ic_menu_camera" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:text="Camera"
+            android:textColor="#000000"
+            android:textSize="9sp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
